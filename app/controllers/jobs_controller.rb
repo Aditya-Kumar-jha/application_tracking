@@ -26,7 +26,7 @@ class JobsController < ApplicationController
                 status: :unprocessable_entity
             end
         else
-            render json: { status: 500, info: "Require Admin login" }
+            render json: { status: 500, info: "Admin Should be login" }
         end
     end
 

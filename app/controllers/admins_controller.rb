@@ -1,16 +1,4 @@
 class AdminsController < ApplicationController
-
-  # POST /admins
-  # def create
-  #   @admin = Admin.new(admin_params)
-  #   if @admin.save
-  #     render json: @user, status: :created
-  #   else
-  #     render json: { errors: @user.errors.full_messages },
-  #            status: :unprocessable_entity
-  #   end
-  # end
- 
     def generate_otp
       
         if  params[:mobile].to_i > 6000000000 && params[:mobile].to_i < 9999999999
@@ -18,9 +6,6 @@ class AdminsController < ApplicationController
           admin = Admin.find_by("mobile = #@number")
           if admin
           @otp = rand(111111..999999)
-          # puts @otp
-          # @number = params[:mobile]
-
           puts "mobile number #@number"
         #   admin = Admin.new
           admin.otp = @otp
